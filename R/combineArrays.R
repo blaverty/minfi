@@ -237,8 +237,8 @@ setMethod(
         colData2 <- colData(object2)
         colData1$ArrayTypes <- array1
         colData2$ArrayTypes <- array2
-        colData1 <- colData(object1)
-        colData2 <- colData(object2)
+        #colData1 <- colData(object1)
+        #colData2 <- colData(object2)
         by <- c("row.names", intersect(names(colData1), names(colData2)))
         colData.merged <- merge(colData1, colData2, all = TRUE, by = by)
         colData(object1) <- colData.merged[match(
