@@ -239,11 +239,13 @@ setMethod(
         colData2$ArrayTypes <- array2
         #colData1 <- colData(object1)
         #colData2 <- colData(object2)
+        print("hi")
         by <- c("row.names", intersect(names(colData1), names(colData2)))
         colData.merged <- merge(colData1, colData2, all = TRUE, by = by)
         colData(object1) <- colData.merged[match(
             x = colnames(object1),
             table = colData.merged[, "Row.names"]), ]
+        print("hi2")
         colData(object2) <- colData.merged[match(
             x = colnames(object2),
             table = colData.merged[, "Row.names"]), ]
@@ -276,11 +278,13 @@ setMethod(
         colData2 <- colData(object2)
         colData1$ArrayTypes <- array1
         colData2$ArrayTypes <- array2
+        print("here")
         by <- c("row.names", intersect(names(colData1), names(colData2)))
         colData.merged <- merge(colData1, colData2, all = TRUE, by = by)
         colData(object1) <- colData.merged[match(
             x = colnames(object1),
             table = colData.merged[, "Row.names"]), ]
+        print("here2")
         colData(object2) <- colData.merged[match(
             x = colnames(object2),
             table = colData.merged[, "Row.names"]), ]
